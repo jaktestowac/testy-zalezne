@@ -13,7 +13,8 @@ test.describe('creating article @p3-ex1', () => {
       await createArticle(page, articleTitle, articleBody);
 
       await expect.soft(page.getByTestId('article-title')).toHaveText(articleTitle);
-      await expect.soft(page.getByTestId('article-body')).toHaveText(articleBody);
+      // ⚠️ soft assert below can lead to next step
+      await expect(page.getByTestId('article-body')).toHaveText(articleBody);
     });
 
     await test.step('update article', async () => {

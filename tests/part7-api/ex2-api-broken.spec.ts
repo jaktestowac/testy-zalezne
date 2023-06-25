@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('creating article @p5-ex1', () => {
+test.describe.configure({ mode: 'serial' });
+
+test.describe('creating article @p7-ex2', () => {
+  let articleUrl = '';
   test.beforeEach(async ({ page }) => {
     await loginToService(page);
   });
@@ -13,12 +16,12 @@ test.describe('creating article @p5-ex1', () => {
 
     await expect.soft(page.getByTestId('article-title')).toHaveText(articleTitle);
     await expect.soft(page.getByTestId('article-body')).toHaveText(articleBody);
+
+    articleUrl = page.url();
   });
 
   test('update article', async ({ page }) => {
     const updatedArticleBody = 'Hej! Update!';
-
-    createArticleApi();
     page.goto(articleUrl);
 
     await page.getByTestId('edit').click();
@@ -29,15 +32,11 @@ test.describe('creating article @p5-ex1', () => {
   });
 });
 
-async function createArticleApi(page, articleTitle: string, articleBody: string) {
-    
-}
-
 async function createArticle(page, articleTitle: string, articleBody: string) {
   await page.getByTestId('open-articles').click();
   await page.getByRole('button', { name: 'Add Article' }).click();
 
-  await page.getByTestId('title-input').fill(articleTitle);
+//   await page.getByTestId('title-input').fill(articleTitle);
   await page.getByTestId('body-text').fill(articleBody);
   await page.getByTestId('save').click();
 }
