@@ -20,12 +20,10 @@ test.describe('creating article @p7-ex1', () => {
   });
 
   test('update article', async ({ page, request }, baseURL) => {
-    const restoreDB = await request.get(
-      `${baseURL}/api/restoreDB`
-    );
-    expect(restoreDB.ok()).toBeTruthy();
+    const newArticleData = await createArticleApi(request, 'New Article', 'New body');
+
     const updatedArticleBody = 'Hej! Update!';
-    page.goto('/article.html?id=22');
+    page.goto(`/article.html?id=${newArticleData.id}`);
 
     await page.getByTestId('edit').click();
     await page.getByTestId('body-input').fill(updatedArticleBody);
@@ -35,7 +33,7 @@ test.describe('creating article @p7-ex1', () => {
   });
 });
 
-async function createArticle(page, articleTitle: string, articleBody: string):Promise<void> {
+async function createArticle(page, articleTitle: string, articleBody: string): Promise<void> {
   await page.getByTestId('open-articles').click();
   await page.getByRole('button', { name: 'Add Article' }).click();
 
@@ -44,7 +42,7 @@ async function createArticle(page, articleTitle: string, articleBody: string):Pr
   await page.getByTestId('save').click();
 }
 
-async function loginToService(page):Promise<void> {
+async function loginToService(page): Promise<void> {
   await page.goto('');
   await page.getByTestId('btn-dropdown').click();
   await page.getByRole('link', { name: 'Login' }).click();
@@ -54,41 +52,43 @@ async function loginToService(page):Promise<void> {
   await page.getByPlaceholder('Enter Password').press('Enter');
 }
 
-async function createArticleApi(request, articleTitle: string, articleBody: string) {
+async function createArticleApi(request, articleTitle: string, articleBody: string): Promise<any> {
   const newArticleData = {
-        user_id: 1,
-        title: articleTitle,
-        body: articleBody,
-        date: '2023-05-26T11:21:00Z',
-        image: '.\\data\\images\\256\\chuttersnap-9cCeS9Sg6nU-unsplash.jpg',
-    };
+    user_id: 1,
+    title: articleTitle,
+    body: articleBody,
+    date: '2023-05-26T11:21:00Z',
+    image: '.\\data\\images\\256\\chuttersnap-9cCeS9Sg6nU-unsplash.jpg',
+  };
 
-    const token = await loginAndReturnToken(request);
-    const loggedHeaders = {
-        Authorization: `Bearer ${token}`,
-    };
+  const token = await loginAndReturnToken(request);
+  const loggedHeaders = {
+    Authorization: `Bearer ${token}`,
+  };
 
-    // Act
-    const createArticleResponse = await request.post(endpoints.articles, {
-        data: newArticleData,
-        headers: loggedHeaders,
-    });
+  // Act
+  const createArticleResponse = await request.post(endpoints.articles, {
+    data: newArticleData,
+    headers: loggedHeaders,
+  });
+
+  return await createArticleResponse.json();
 }
 
 export async function loginAndReturnToken(request: APIRequestContext): Promise<string> {
-    const loginData = {
-      email: 'Moses.Armstrong@Feest.ca',
-      password: "test1"
-    }
+  const loginData = {
+    email: 'Moses.Armstrong@Feest.ca',
+    password: 'test1',
+  };
 
-    // login:
-    const loginResponse = await request.post(endpoints.login, {data: loginData});
-    const loginResponseData = await loginResponse.json();
+  // login:
+  const loginResponse = await request.post(endpoints.login, { data: loginData });
+  const loginResponseData = await loginResponse.json();
 
-    return loginResponseData.access_token;
+  return loginResponseData.access_token;
 }
 
 export const endpoints = {
-    articles: '/api/articles/',
-    login: '/api/login/'
+  articles: '/api/articles/',
+  login: '/api/login/',
 };

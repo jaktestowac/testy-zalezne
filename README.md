@@ -18,7 +18,7 @@ Get free app by proceeding to jaktestowac.pl/gad
 - npm i
 - npx playwright install
 - set baseURL in playwright.config.json 
-
+- set timeout to desired value (current 10s can be to short)
 ## How to run tests
 TODO
 
