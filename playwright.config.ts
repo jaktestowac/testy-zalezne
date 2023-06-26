@@ -2,13 +2,14 @@ import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
 
 export const STORAGE_STATE = path.join(__dirname, 'temp/session.json');
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   reporter: 'html',
   timeout: 10 * 1000,
   use: {
-    baseURL: 'https://flannel-pitch-inspiration.glitch.me/',
+    baseURL: 'https://abalone-odd-help.glitch.me/',
     trace: 'on',
     screenshot: 'on',
   },
@@ -19,7 +20,9 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // // Simple dependency in project
+    // Part5 setup
+
+    // // Part5 Ex1 Simple dependency in project
     // {
     //   name: 'setup-1',
     //   grep: /@p5-login-ex1/,
@@ -33,7 +36,7 @@ export default defineConfig({
     //   },
     // },
 
-    // Simple dependency split to separate files
+    // // Part5 Ex2 Simple dependency split to separate files
     // {
     //   name: 'setup-2',
     //   grep: /@p5-login-ex2/,
@@ -47,7 +50,7 @@ export default defineConfig({
     //   },
     // },
 
-    // // Dependency file refactored
+    // // Part5 Ex3 Dependency file refactored
     // {
     //   name: 'setup-3',
     //   testMatch: 'tests/**/*.setup.ts',

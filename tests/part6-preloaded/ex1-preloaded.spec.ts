@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('creating article @p6-ex1', () => {
-  let articleUrl = '';
   test.beforeEach(async ({ page }) => {
     await loginToService(page);
   });
@@ -14,8 +13,6 @@ test.describe('creating article @p6-ex1', () => {
 
     await expect.soft(page.getByTestId('article-title')).toHaveText(articleTitle);
     await expect.soft(page.getByTestId('article-body')).toHaveText(articleBody);
-
-    articleUrl = page.url();
   });
 
   test('update article', async ({ page }) => {
