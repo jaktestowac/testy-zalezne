@@ -17,6 +17,7 @@ Get free app by proceeding to jaktestowac.pl/gad
 ## How to install project
 - npm i
 - npx playwright install
+- set baseURL in playwright.config.json 
 
 ## How to run tests
 TODO
