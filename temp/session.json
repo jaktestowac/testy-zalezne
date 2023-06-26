@@ -1,0 +1,75 @@
+{
+  "cookies": [
+    {
+      "name": "firstname",
+      "value": "Moses",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423232,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "username",
+      "value": "Moses.Armstrong%40Feest.ca",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423338,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "email",
+      "value": "Moses.Armstrong%40Feest.ca",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423353,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "token",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1vc2VzLkFybXN0cm9uZ0BGZWVzdC5jYSIsImRhdGEiOiJUQkQiLCJpYXQiOjE2ODc3NzU2ODQsImV4cCI6MTY4Nzc3OTI4NH0.W118DdXTy5UczqRHj8-2MjS7wnXGwaz8gfVGgPRdHTQ",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423364,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "expires",
+      "value": "1687779284885",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423376,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "id",
+      "value": "1",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423386,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "avatar",
+      "value": ".%5Cdata%5Cusers%5Cface_1591133479.7144732.jpg",
+      "domain": "flannel-pitch-inspiration.glitch.me",
+      "path": "/",
+      "expires": 1687779285.423396,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

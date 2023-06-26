@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.configure({ mode: 'serial' });
-
-test.describe('creating article @p7-ex2', () => {
+test.describe('creating article @p6-ex1', () => {
   let articleUrl = '';
   test.beforeEach(async ({ page }) => {
     await loginToService(page);
@@ -22,7 +20,7 @@ test.describe('creating article @p7-ex2', () => {
 
   test('update article', async ({ page }) => {
     const updatedArticleBody = 'Hej! Update!';
-    page.goto(articleUrl);
+    page.goto('/article.html?id=22');
 
     await page.getByTestId('edit').click();
     await page.getByTestId('body-input').fill(updatedArticleBody);
@@ -36,7 +34,7 @@ async function createArticle(page, articleTitle: string, articleBody: string) {
   await page.getByTestId('open-articles').click();
   await page.getByRole('button', { name: 'Add Article' }).click();
 
-//   await page.getByTestId('title-input').fill(articleTitle);
+  await page.getByTestId('title-input').fill(articleTitle);
   await page.getByTestId('body-text').fill(articleBody);
   await page.getByTestId('save').click();
 }

@@ -1,15 +1,15 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('creating article @p7-ex1', () => {
+test.describe.configure({ mode: 'serial' });
+
+test.describe('creating article @p5-ex3', () => {
   let articleUrl = '';
-  test.beforeEach(async ({ page }) => {
-    await loginToService(page);
-  });
 
   test('create article', async ({ page }) => {
     const articleTitle = 'Webinar';
     const articleBody = 'Hej!';
 
+    await page.goto('/welcome');
     await createArticle(page, articleTitle, articleBody);
 
     await expect.soft(page.getByTestId('article-title')).toHaveText(articleTitle);
@@ -18,13 +18,9 @@ test.describe('creating article @p7-ex1', () => {
     articleUrl = page.url();
   });
 
-  test('update article', async ({ page, request }, baseURL) => {
-    const restoreDB = await request.get(
-      `${baseURL}/api/restoreDB`
-    );
-    expect(restoreDB.ok()).toBeTruthy();
+  test('update article', async ({ page }) => {
     const updatedArticleBody = 'Hej! Update!';
-    page.goto('/article.html?id=22');
+    page.goto(articleUrl);
 
     await page.getByTestId('edit').click();
     await page.getByTestId('body-input').fill(updatedArticleBody);

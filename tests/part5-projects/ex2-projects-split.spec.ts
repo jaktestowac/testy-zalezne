@@ -1,24 +1,28 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('creating article @p7-ex1', () => {
+test.describe.configure({ mode: 'serial' });
+
+test.describe('creating article @p5-ex2', () => {
+  let articleUrl = '';
   test.beforeEach(async ({ page }) => {
-    await loginToService(page);
+    await page.goto('/welcome');
   });
 
   test('create article', async ({ page }) => {
     const articleTitle = 'Webinar';
     const articleBody = 'Hej!';
 
+    await page.goto('/welcome');
     await createArticle(page, articleTitle, articleBody);
 
     await expect.soft(page.getByTestId('article-title')).toHaveText(articleTitle);
     await expect.soft(page.getByTestId('article-body')).toHaveText(articleBody);
+
+    articleUrl = page.url();
   });
 
   test('update article', async ({ page }) => {
     const updatedArticleBody = 'Hej! Update!';
-
-    const articleUrl = await createArticleApi(page, 'So new article', 'Super content');
     page.goto(articleUrl);
 
     await page.getByTestId('edit').click();
@@ -28,10 +32,6 @@ test.describe('creating article @p7-ex1', () => {
     await expect.soft(page.getByTestId('article-body')).toHaveText(updatedArticleBody);
   });
 });
-
-async function createArticleApi(page, articleTitle: string, articleBody: string): Promise<string> {
-  return Promise.resolve('url');
-}
 
 async function createArticle(page, articleTitle: string, articleBody: string) {
   await page.getByTestId('open-articles').click();
