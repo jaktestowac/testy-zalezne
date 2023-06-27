@@ -8,7 +8,7 @@ test('login to service @p5-login-ex1', async ({ page }) => {
 
 test.describe.configure({ mode: 'serial' });
 
-test.describe('creating article @p5-ex1', () => {
+test.describe('creating and updating article @p5-ex1', () => {
   let articleUrl = '';
 
   test('create article', async ({ page }) => {

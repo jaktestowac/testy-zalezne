@@ -1,8 +1,8 @@
 # About
 
-Exercises for traning dependent tests handling.
+Exercises for training dependent tests handling.
 
-All exercises have detiled desricptions available after signing here:
+All exercises have detailed descriptions available after signing here:
 https://jaktestowac.pl/pw-strategie/
 
 ## Tested app

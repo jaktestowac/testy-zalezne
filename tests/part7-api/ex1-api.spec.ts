@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { APIRequestContext } from 'playwright-core';
 
-test.describe('creating article @p7-ex1', () => {
-  let articleUrl = '';
+test.describe('creating and updating article @p7-ex1', () => {
   test.beforeEach(async ({ page }) => {
     await loginToService(page);
   });
@@ -15,11 +14,9 @@ test.describe('creating article @p7-ex1', () => {
 
     await expect.soft(page.getByTestId('article-title')).toHaveText(articleTitle);
     await expect.soft(page.getByTestId('article-body')).toHaveText(articleBody);
-
-    articleUrl = page.url();
   });
 
-  test('update article', async ({ page, request }, baseURL) => {
+  test('update article', async ({ page, request }) => {
     const newArticleData = await createArticleApi(request, 'New Article', 'New body');
 
     const updatedArticleBody = 'Hej! Update!';

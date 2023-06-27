@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('creating article @p2-ex4', () => {
+test.describe('creating and updating article @p2-ex4', () => {
   const articleTitle = 'Webinar';
   const articleBody = 'Hej!';
 

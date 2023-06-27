@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe.configure({ mode: 'serial' });
 
-test.describe('creating article @p5-ex3', () => {
+test.describe('creating and updating article @p5-ex3', () => {
   let articleUrl = '';
 
   test('create article', async ({ page }) => {

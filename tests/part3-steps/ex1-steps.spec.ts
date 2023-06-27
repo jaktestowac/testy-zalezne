@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('creating article @p3-ex1', () => {
+test.describe('creating and updating article @p3-ex1', () => {
   test.beforeEach(async ({ page }) => {
     await loginToService(page);
   });

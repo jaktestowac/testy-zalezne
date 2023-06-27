@@ -12,7 +12,8 @@
     "test-p4-ex1": "npx playwright test -g @p4-ex1 --headed",
     "test-p4-ex2": "npx playwright test -g @p4-ex2 --headed",
     "test-p5-ex1": "npx playwright test -g @p5-ex1 --headed",
-    "test-p5-ex2": "npx playwright test -g @p5-ex2 --headed"
+    "test-p5-ex2": "npx playwright test -g @p5-ex2 --headed",
+    "ui mode": "npx playwright test --ui"
   },
   "keywords": [],
   "author": "",

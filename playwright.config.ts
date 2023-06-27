@@ -6,10 +6,11 @@ export const STORAGE_STATE = path.join(__dirname, 'temp/session.json');
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
+  workers: 2,
   reporter: 'html',
   timeout: 10 * 1000,
   use: {
-    baseURL: 'https://abalone-odd-help.glitch.me/',
+    baseURL: 'https://abrasive-economic-brontomerus.glitch.me/',
     trace: 'on',
     screenshot: 'on',
   },
@@ -50,18 +51,18 @@ export default defineConfig({
     //   },
     // },
 
-    // // Part5 Ex3 Dependency file refactored
-    // {
-    //   name: 'setup-3',
-    //   testMatch: 'tests/**/*.setup.ts',
-    // },
-    // {
-    //   name: 'auth-3',
-    //   grep: /@p5-ex3/,
-    //   dependencies: ['setup-3'],
-    //   use: {
-    //     storageState: STORAGE_STATE,
-    //   },
-    // },
+  //   // Part5 Ex3 Dependency file refactored
+  //   {
+  //     name: 'setup-3',
+  //     testMatch: 'tests/**/*.setup.ts',
+  //   },
+  //   {
+  //     name: 'auth-3',
+  //     grep: /@p5-ex3/,
+  //     dependencies: ['setup-3'],
+  //     use: {
+  //       storageState: STORAGE_STATE,
+  //     },
+  //   },
   ],
 });
