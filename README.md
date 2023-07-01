@@ -11,11 +11,11 @@ Get free app by proceeding to https://jaktestowac.pl/gad
 ⚠️ Glitch free account is limited to 4k requests per hour, app is deleted after 5 days without account
 
 ## Required software
-- Node.js
-- Visual Studio Code
-- extensions:
-    - Prettier - Code formatter
-    - Playwright Test for VSCode
+- `Node.js`
+- `Visual Studio Code`
+- extensions for VSC:
+    - `Prettier - Code formatter`
+    - `Playwright Test for VSCode`
 
 ## How to install project
 1. Install packages:
@@ -49,3 +49,12 @@ If test not appears, refresh tab or check `playwright.config.ts` if you have eve
 3. Uncomment item related to exercise i.e. `Part5 Ex1 Simple dependency in project` 
 4. Run tests for given exercises from `part5-projects` folder in i.e `tests\part5-projects\ex1-projects-simple.spec.ts`
 5. After finishing testing remember to comment back project item in `playwright.config.ts` and uncomment first project item
+
+## Reports
+Just run script form `package.json`: 
+```
+npm run report
+```
+Recommended option is running this script in separate console.
+
+After running test the report is updated and you can refresh page with report

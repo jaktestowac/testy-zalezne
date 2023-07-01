@@ -1,16 +1,21 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
 
+// Path for storing session for Part 5 exercises 
 export const STORAGE_STATE = path.join(__dirname, 'temp/session.json');
 
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  workers: 2,
+  // ⚠️ Set to 2 to force parallel mode, default is 0 so 50% of your logical cores will be used
+  workers: 0,
   reporter: 'html',
+  // ⚠️ Modify below timeout if 10s is to short for your environment
   timeout: 10 * 1000,
   use: {
-    baseURL: 'https://abrasive-economic-brontomerus.glitch.me/',
+    // ⚠️ Set your url to app
+    baseURL: 'https://[YOUR-APP].glitch.me/',
+    // Traces and screenshots are always on 
     trace: 'on',
     screenshot: 'on',
   },
