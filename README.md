@@ -4,6 +4,7 @@ Exercises for training dependent tests handling.
 
 All exercises have detailed descriptions available after signing here:
 https://jaktestowac.pl/pw-strategie/
+You will get link to recording of full webinar.
 
 ## Tested app
 Get free app by proceeding to https://jaktestowac.pl/gad
