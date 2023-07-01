@@ -21,7 +21,8 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // Part5 setup
+    // Part5 setup 
+    // ⚠️ Remember to comment it back when using other exercises
 
     // // Part5 Ex1 Simple dependency in project
     // {
