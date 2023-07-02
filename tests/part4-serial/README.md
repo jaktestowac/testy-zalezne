@@ -1,4 +1,4 @@
-# Test run with Serial mode
+# Tests run with Serial mode
 
 # Scenario
 

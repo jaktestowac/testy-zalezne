@@ -1,4 +1,4 @@
-# Test run with data preloaded in database
+# Tests run with data preloaded in database
 
 # Scenario
 

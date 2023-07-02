@@ -1,4 +1,4 @@
-# Test run with Projects
+# Tests run with Projects
 
 # Scenario
 

@@ -20,7 +20,9 @@ export default defineConfig({
     screenshot: 'on',
   },
   projects: [
-    // No dependency
+    // No dependency, by default: 
+    // - below section should be active
+    // - section below Part5 setup should be commented 
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },

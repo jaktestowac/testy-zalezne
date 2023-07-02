@@ -1,4 +1,4 @@
-# Test what can be run independently
+# Tests run independently
 
 # Scenario
 
