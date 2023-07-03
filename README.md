@@ -36,7 +36,7 @@ Information how to get tested app is located in page available after registering
 
 3. Configure `playwright.config.json`
    - Set baseURL to your app main url.
-   - Set timeout to desired value (current 10s can be to short)
+   - Set timeout to desired value (current 20s can be to short)
 
 ## How to run tests
 

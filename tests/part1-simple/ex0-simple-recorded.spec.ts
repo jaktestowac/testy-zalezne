@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test recorded @p1-ex0', async ({ page }) => {
-  await page.goto('https://abalone-odd-help.glitch.me/');
+  await page.goto('');
   await page.getByTestId('btn-dropdown').click();
   await page.getByRole('link', { name: 'Login' }).click();
   await page.getByPlaceholder('Enter User Email').click();

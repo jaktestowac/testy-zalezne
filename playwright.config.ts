@@ -1,34 +1,34 @@
 import { defineConfig, devices } from '@playwright/test';
 import * as path from 'path';
 
-// Path for storing session for Part 5 exercises 
+// Path for storing session for Part 5 exercises
 export const STORAGE_STATE = path.join(__dirname, 'temp/session.json');
 
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   // ⚠️ Set to 2 to force parallel mode, default is 0 so 50% of your logical cores will be used
-  workers: 0,
+  workers: undefined,
   reporter: 'html',
   // ⚠️ Modify below timeout if 10s is to short for your environment
-  timeout: 10 * 1000,
+  timeout: 20 * 1000,
   use: {
     // ⚠️ Set your url to app
-    baseURL: 'https://[YOUR-APP].glitch.me/',
-    // Traces and screenshots are always on 
+    baseURL: 'https://[your-glitch-app-name].glitch.me/',
+    // Traces and screenshots are always on
     trace: 'on',
     screenshot: 'on',
   },
   projects: [
-    // No dependency, by default: 
+    // No dependency, by default:
     // - below section should be active
-    // - section below Part5 setup should be commented 
+    // - section below Part5 setup should be commented
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // Part5 setup 
+    // Part5 setup
     // ⚠️ Remember to comment it back when using other exercises
 
     // // Part5 Ex1 Simple dependency in project
@@ -59,18 +59,18 @@ export default defineConfig({
     //   },
     // },
 
-  //   // Part5 Ex3 Dependency file refactored
-  //   {
-  //     name: 'setup-3',
-  //     testMatch: 'tests/**/*.setup.ts',
-  //   },
-  //   {
-  //     name: 'auth-3',
-  //     grep: /@p5-ex3/,
-  //     dependencies: ['setup-3'],
-  //     use: {
-  //       storageState: STORAGE_STATE,
-  //     },
-  //   },
+    //   // Part5 Ex3 Dependency file refactored
+    //   {
+    //     name: 'setup-3',
+    //     testMatch: 'tests/**/*.setup.ts',
+    //   },
+    //   {
+    //     name: 'auth-3',
+    //     grep: /@p5-ex3/,
+    //     dependencies: ['setup-3'],
+    //     use: {
+    //       storageState: STORAGE_STATE,
+    //     },
+    //   },
   ],
 });
